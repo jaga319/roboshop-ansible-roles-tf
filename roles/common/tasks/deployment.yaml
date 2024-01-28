@@ -1,0 +1,45 @@
+# deployment for catalogue only 
+- name: "stop the {{component}}"
+  tags:
+  - deployment
+  ansible.builtin.service:
+    name: "{{component}}"
+    state: stopped
+- name: remove old code
+  tags:
+  - deployment
+  ansible.builtin.file:
+    path: /app
+    state: absent
+- name: creating app directory
+  tags:
+  - deployment
+  ansible.builtin.file:
+    path: /app
+    state: directory
+- name: download {{component}} from url
+  tags:
+  - deployment
+  ansible.builtin.get_url:
+    url: "https://roboshop-builds.s3.amazonaws.com/{{component}}.zip"
+    dest: "/tmp/{{component}}.zip"
+- name: unarchive the zip file
+  tags:
+  - deployment
+  ansible.builtin.unarchive:
+    src:  "/tmp/{{component}}.zip"
+    dest: /app
+    remote_src: yes
+- name: "install dependencies"
+  tags:
+  - deployment
+  ansible.builtin.command: npm install
+  args:
+    chdir: /app
+- name: "restarted the {{component}}"
+  tags:
+  - deployment
+  ansible.builtin.service:
+    name: "{{component}}"
+    state: restarted
+
