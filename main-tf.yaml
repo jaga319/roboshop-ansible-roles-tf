@@ -2,8 +2,8 @@
   # hosts: "{{component}}"
   hosts: localhost
   connection: local
-  become: yes
   vars_files:
   - "variables-{{env}}.yaml"
+  become: yes
   roles:
   - "{{component}}"
