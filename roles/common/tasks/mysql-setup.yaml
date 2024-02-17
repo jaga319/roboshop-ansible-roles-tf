@@ -3,10 +3,12 @@
     name: mysql
     state: present
 - name: check cities data aleady available or not 
-   ansible.builtin.shell: mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 -sN -e "select count(*) from information_schema.schemata where schema_name ='cities'"
+  ansible.builtin.shell: mysql -h mysql-dev.infome.website -uroot -pRoboShop@1 -sN -e "select count(*) from information_schema.schemata where schema_name ='cities'"
   # ansible.builtin.command:  mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 -sN -e "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'cities'"
 
   register: schema
 - name: data load cities
-  ansible.builtin.shell: "mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 < /app/schema/shipping.sql"
+  # ansible.builtin.shell: "mysql -h {{MYSQL_HOST}} -uroot -pRoboShop@1 < /app/schema/shipping.sql"
+    ansible.builtin.shell: "mysql -h mysql-dev.infome.website -uroot -pRoboShop@1 < /app/schema/shipping.sql"
+
   when: schema.stdout != "1"
