@@ -19,4 +19,5 @@ PAYMENT_HOST: payment.app-dev.infome.website
 SHIPPING_HOST: shipping.app-dev.infome.website
 MYSQL_HOST: mysql-dev.infome.website
 RABBITMQ_HOST: rabbitmq-dev.infome.website
-DISPATCH_HOST: dispatch.app-dev.infome.websiten
+DISPATCH_HOST: dispatch.app-dev.infome.website
+mysql_password: RoboShop@1
