@@ -1,10 +1,10 @@
-MONGODB_HOST: mongodb.infome.website
-REDIS_HOST: redis.infome.website
-CATALOGUE_HOST: catalogue.infome.website
-USER_HOST: user.infome.website
-CART_HOST: cart.infome.website
-PAYMENT_HOST: payment.infome.website
-SHIPPING_HOST: shipping.infome.website
-MYSQL_HOST: mysql.infome.website
-RABBITMQ_HOST: rabbitmq.infome.website
-DISPATCH_HOST: dispatch.infome.website
+# MONGODB_HOST: mongodb.infome.website
+# REDIS_HOST: redis.infome.website
+# CATALOGUE_HOST: catalogue.infome.website
+# USER_HOST: user.infome.website
+# CART_HOST: cart.infome.website
+# PAYMENT_HOST: payment.infome.website
+# SHIPPING_HOST: shipping.infome.website
+# MYSQL_HOST: mysql.infome.website
+# RABBITMQ_HOST: rabbitmq.infome.website
+# DISPATCH_HOST: dispatch.infome.website
