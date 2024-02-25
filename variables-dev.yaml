@@ -21,3 +21,5 @@ MYSQL_HOST: mysql-dev.infome.website
 RABBITMQ_HOST: rabbitmq-dev.infome.website
 DISPATCH_HOST: dispatch.app-dev.infome.website
 mysql_password: RoboShop@1
+NEXUS_URL: http://100.27.36.180:8081/repository
+groupid : "com/roboshop"
